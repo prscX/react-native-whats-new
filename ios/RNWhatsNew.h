@@ -6,8 +6,8 @@
 #endif
 
 #import "WhatsNewKit/WhatsNewKit-Swift.h"
+#import "RNImageHelper.h"
 
 @interface RNWhatsNew : NSObject <RCTBridgeModule>
 
 @end
-  

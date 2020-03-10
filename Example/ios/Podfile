@@ -40,6 +40,7 @@ target 'Example' do
   end
 
   use_native_modules!
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
   pod 'RNWhatsNew', :path => '../node_modules/@prscx/react-native-whats-new/ios'
 
   use_frameworks!
