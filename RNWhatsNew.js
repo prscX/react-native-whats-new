@@ -33,6 +33,7 @@ class WhatsNew extends PureComponent {
             return element;
         });
 
+
         RNWhatsNew.Show(
             props,
             (...args) => {
