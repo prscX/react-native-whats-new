@@ -45,7 +45,7 @@ target 'Example' do
 
   use_frameworks!
 
-  pod 'WhatsNewKit'
+  pod 'WhatsNewKit', :git => 'https://github.com/prscX/WhatsNewKit', :branch => 'react-native'
 
 end
 
