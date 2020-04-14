@@ -1,10 +1,6 @@
 <h1 align="center">
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/WhatsNewKitLogo.png"/>
-</p>
-
-<p align="center">
   <a href="https://www.npmjs.com/package/react-native-whats-new"><img src="http://img.shields.io/npm/v/react-native-whats-new.svg?style=flat" /></a>
   <a href="https://github.com/prscX/react-native-whats-new/pulls"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" /></a>
   <a href="https://github.com/prscX/react-native-whats-new#License"><img src="https://img.shields.io/npm/l/react-native-whats-new.svg?style=flat" /></a>
@@ -14,6 +10,15 @@
     ReactNative: Native WhatsNew (Android/iOS)
 
 RNWhatsNew enables you to easily showcase your awesome new app features. This library is a React Native bridge around native whats new libraries.
+
+
+| **Android: [TonnyL/WhatsNew](https://github.com/TonnyL/WhatsNew)**             |
+| ----------------- |
+
+
+| **iOS: [SvenTiigi/WhatsNewKit](https://github.com/SvenTiigi/WhatsNewKit)**             |
+| ----------------- |
+
 
 ## 📖 Getting started
 
