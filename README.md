@@ -9,6 +9,9 @@
 
     ReactNative: Native WhatsNew (Android/iOS)
 
+If this project has helped you out, please support us with a star 🌟
+</h1>
+
 RNWhatsNew enables you to easily showcase your awesome new app features. This library is a React Native bridge around native whats new libraries.
 
 
