@@ -12,6 +12,11 @@ class WhatsNew extends PureComponent {
     };
 
     static defaultProps = {
+        titleColor: '',
+        itemTitleColor: '',
+        itemSubtitleColor: '',
+        buttonTextColor: '',
+        buttonBackgroundColor: ''
     };
 
     static Show(props) {
@@ -33,6 +38,11 @@ class WhatsNew extends PureComponent {
             return element;
         });
 
+        if (props.titleColor === undefined) props.titleColor = WhatsNew.defaultProps.titleColor
+        if (props.itemTitleColor === undefined) props.itemTitleColor = WhatsNew.defaultProps.itemTitleColor
+        if (props.itemSubtitleColor === undefined) props.itemSubtitleColor = WhatsNew.defaultProps.itemSubtitleColor
+        if (props.buttonTextColor === undefined) props.buttonTextColor = WhatsNew.defaultProps.buttonTextColor
+        if (props.buttonBackgroundColor === undefined) props.buttonBackgroundColor = WhatsNew.defaultProps.buttonBackgroundColor
 
         RNWhatsNew.Show(
             props,

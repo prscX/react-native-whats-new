@@ -13,6 +13,7 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,19 +41,51 @@ public class RNWhatsNewModule extends ReactContextBaseJavaModule {
     String title = props.getString("title");
     ReadableArray items = props.getArray("items");
 
+    String titleColor = props.getString("titleColor");
+    String itemTitleColor = props.getString("itemTitleColor");
+    String itemSubtitleColor = props.getString("itemSubtitleColor");
+    String buttonTextColor = props.getString("buttonTextColor");
+    String buttonBackgroundColor = props.getString("buttonBackgroundColor");
+
     List<WhatsNewItem> whatsNewItems = new ArrayList<WhatsNewItem>();
     for (int i = 0; i < items.size(); i++) {
       ReadableMap item = items.getMap(i);
+      ReadableMap icon = item.getMap("icon");
 
-      whatsNewItems.add(new WhatsNewItem(item.getString("title"), item.getString("subtitle"), WhatsNewItem.NO_IMAGE_RES_ID));
+      int iconID = WhatsNewItem.NO_IMAGE_RES_ID;
+      try {
+        Class<?> clazz = Class.forName("prscx.imagehelper.RNImageHelperModule"); //Controller A or B
+        Class params[] = {ReadableMap.class};
+        Method method = clazz.getDeclaredMethod("GenerateImageID", params);
+
+        iconID = (int) method.invoke(null, icon);
+      } catch (Exception e) {
+      }
+
+      whatsNewItems.add(new WhatsNewItem(item.getString("title"), item.getString("subtitle"), iconID));
     }
 
     WhatsNew whatsNew = WhatsNew.newInstance(whatsNewItems);
 
-    whatsNew.setTitleText(title);
+    if (title.length() > 0) {
+      whatsNew.setTitleText(title);
+    }
 
-    whatsNew.setButtonTextColor(Color.parseColor("#ffffff"));
-    whatsNew.setButtonBackground(Color.parseColor("#2777ae"));
+    if (titleColor.length() > 0) {
+      whatsNew.setButtonTextColor(Color.parseColor(titleColor));
+    }
+    if (itemTitleColor.length() > 0) {
+      whatsNew.setButtonTextColor(Color.parseColor(itemTitleColor));
+    }
+    if (itemSubtitleColor.length() > 0) {
+      whatsNew.setButtonTextColor(Color.parseColor(itemSubtitleColor));
+    }
+    if (buttonTextColor.length() > 0) {
+      whatsNew.setButtonTextColor(Color.parseColor(buttonTextColor));
+    }
+    if (buttonBackgroundColor.length() > 0) {
+      whatsNew.setButtonBackground(Color.parseColor(buttonBackgroundColor));
+    }
 
     whatsNew.setPresentationOption(PresentationOption.DEBUG);
     whatsNew.presentAutomatically((AppCompatActivity) getCurrentActivity());

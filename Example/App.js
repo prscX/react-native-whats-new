@@ -11,12 +11,16 @@ type Props = {
 
 export default class App extends Component<Props> {
   _onPress = () => {
-    let facebook = <Icon name={"facebook"} color={"#000000"} size={40} family={"FontAwesome"} />;
-    let instagram = <Icon name={"instagram"} color={"#000000"} size={40} family={"FontAwesome"} />;
-    let skype = <Icon name={"skype"} color={"#000000"} size={40} family={"FontAwesome"} />;
+    let facebook = <Icon name={"twitter.png"} color={"#000000"} size={40} />;
+    let instagram = (
+      <Icon name={'twitter.png'} color={'#000000'} size={40} />
+    );
+    let skype = <Icon name={'twitter.png'} color={'#000000'} size={40} />;
 
     RNWhatsNew.Show({
-      title: 'Whats New',
+      title: '',
+      buttonTextColor: '#FFFFFF',
+      buttonBackgroundColor: '#2777AE',
       items: [
         {
           title: 'Feature 1 Title',
