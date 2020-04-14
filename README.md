@@ -25,7 +25,7 @@ RNWhatsNew enables you to easily showcase your awesome new app features. This li
 
 ## 📖 Getting started
 
-`$ yarn add react-native-whats-new`
+`$ yarn add @prscx/react-native-whats-new`
 `$ yarn add react-native-vector-icons`
 
 - **iOS**
