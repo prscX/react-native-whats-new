@@ -167,7 +167,12 @@ RNWhatsNew.Show({
 ```javascript
 	let facebook = <Icon family={'FontAwesome'} name={'facebook'} color={'#000000'} size={30} />
 
-	<RNPopover.Menu label={"Facebook"} icon={facebook} />
+    RNWhatsNew.Show({
+        items: [
+        {
+            icon: facebook
+        }
+    });
 ```
 
 > **Note:**
