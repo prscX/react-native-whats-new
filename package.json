@@ -1,6 +1,6 @@
 {
     "name": "@prscx/react-native-whats-new",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "React Native: Native Whats New Kit",
     "main": "RNWhatsNew.js",
     "homepage": "https://github.com/prscX/react-native-whats-new.git",
