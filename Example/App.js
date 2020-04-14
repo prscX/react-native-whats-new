@@ -11,14 +11,46 @@ type Props = {
 
 export default class App extends Component<Props> {
   _onPress = () => {
-    let facebook = <Icon name={"twitter.png"} color={"#000000"} size={40} />;
-    let instagram = (
-      <Icon name={'twitter.png'} color={'#000000'} size={40} />
-    );
-    let skype = <Icon name={'twitter.png'} color={'#000000'} size={40} />;
+    let facebook, instagram, skype
 
+    if (Platform.OS === 'android') {
+      facebook = (
+        <Icon name={'twitter.png'} color={'#000000'} size={40} />
+      );
+      instagram = (
+        <Icon name={'twitter.png'} color={'#000000'} size={40} />
+      );
+      skype = <Icon name={'twitter.png'} color={'#000000'} size={40} />;
+    } else {
+      facebook = (
+        <Icon
+          name={'facebook'}
+          color={'#000000'}
+          size={40}
+          family={'FontAwesome'}
+        />
+      );
+      instagram = (
+        <Icon
+          name={'instagram'}
+          color={'#000000'}
+          size={40}
+          family={'FontAwesome'}
+        />
+      );
+      skype = (
+        <Icon
+          name={'skype'}
+          color={'#000000'}
+          size={40}
+          family={'FontAwesome'}
+        />
+      );
+    }
+  
     RNWhatsNew.Show({
-      title: '',
+      title: 'Whats New',
+      titleColor: '#545444',
       buttonTextColor: '#FFFFFF',
       buttonBackgroundColor: '#2777AE',
       items: [
